@@ -23,7 +23,7 @@ export function Hero() {
         <img
           alt={hero.superhero}
           className='img-thumbnail animate__animated animate__fadeInLeft'
-          src={`/assets/heroes/${id}.jpg`}
+          src={`./assets/heroes/${id}.jpg`}
         />
       </div>
 
