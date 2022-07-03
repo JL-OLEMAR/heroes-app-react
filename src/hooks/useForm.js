@@ -1,19 +1,23 @@
 import { useState } from 'react'
 
-// Custom Hooks que se encargara de manejar los formularios
-export const useForm = (initialState = {}) => {
-  const [values, setValues] = useState(initialState)
+export const useForm = (initialForm = {}) => {
+  const [formState, setFormState] = useState(initialForm)
 
-  const reset = () => {
-    setValues(initialState)
-  }
-
-  const handleInputChange = ({ target }) => {
-    setValues({
-      ...values,
+  const onInputChange = ({ target }) => {
+    setFormState({
+      ...formState,
       [target.name]: target.value
     })
   }
 
-  return [values, handleInputChange, reset]
+  const onResetForm = () => {
+    setFormState(initialForm)
+  }
+
+  return {
+    ...formState,
+    formState,
+    onInputChange,
+    onResetForm
+  }
 }
