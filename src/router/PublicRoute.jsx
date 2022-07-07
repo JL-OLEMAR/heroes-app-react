@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom'
 import { AuthContext } from '../auth'
 
 export function PublicRoute({ children }) {
-  const { logged } = useContext(AuthContext)
+  const { isLogged } = useContext(AuthContext)
 
-  return !logged ? children : <Navigate to='/marvel' />
+  return !isLogged ? children : <Navigate to='/marvel' />
 }

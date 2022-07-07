@@ -29,9 +29,6 @@ export function AppRouter() {
           }
           path='/*'
         />
-
-        {/* <Route path="login" element={<LoginPage />} /> */}
-        {/* <Route path="/*" element={ <HeroesRoutes />} /> */}
       </Routes>
     </>
   )

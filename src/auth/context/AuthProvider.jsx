@@ -8,7 +8,7 @@ import { authReducer } from './authReducer.js'
 const lazyInitial = () => {
   const user = JSON.parse(localStorage.getItem('user'))
 
-  return { logged: !!user, user }
+  return { isLogged: !!user, user }
 }
 
 export function AuthProvider({ children }) {
