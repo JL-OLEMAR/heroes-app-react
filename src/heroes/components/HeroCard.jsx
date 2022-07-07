@@ -7,7 +7,6 @@ const CharactersByHero = ({ alter_ego, characters }) => {
 export function HeroCard({
   id,
   superhero,
-  publisher,
   alter_ego,
   first_appearance,
   characters
@@ -33,7 +32,7 @@ export function HeroCard({
                 <small className='text-muted'>{first_appearance}</small>
               </p>
 
-              <Link to={`/hero/${id}`}>Más..</Link>
+              <Link to={`/hero/${id}`}>More..</Link>
             </div>
           </div>
         </div>

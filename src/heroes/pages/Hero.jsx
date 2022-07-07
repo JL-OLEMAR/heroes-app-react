@@ -13,9 +13,7 @@ export function Hero() {
     navigate(-1)
   }
 
-  if (!hero) {
-    return <Navigate to='/marvel' />
-  }
+  if (!hero) return <Navigate to='/marvel' />
 
   return (
     <div className='row mt-5'>
