@@ -5,35 +5,25 @@ import { types } from '../types'
 import { AuthContext } from './AuthContext.jsx'
 import { authReducer } from './authReducer.js'
 
-// const initialState = {
-//     logged: false,
-// }
-
-const init = () => {
+const lazyInitial = () => {
   const user = JSON.parse(localStorage.getItem('user'))
 
-  return {
-    logged: !!user,
-    user: user
-  }
+  return { logged: !!user, user }
 }
 
 export function AuthProvider({ children }) {
-  const [authState, dispatch] = useReducer(authReducer, {}, init)
+  const [authState, dispatch] = useReducer(authReducer, {}, lazyInitial)
 
   const login = (name = '') => {
     const user = { id: 'ABC', name }
-    const action = { type: types.login, payload: user }
 
     localStorage.setItem('user', JSON.stringify(user))
-    dispatch(action)
+    dispatch({ type: types.login, payload: user })
   }
 
   const logout = () => {
     localStorage.removeItem('user')
-    const action = { type: types.logout }
-
-    dispatch(action)
+    dispatch({ type: types.logout })
   }
 
   return (

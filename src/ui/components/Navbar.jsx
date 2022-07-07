@@ -7,11 +7,9 @@ export function Navbar() {
   const { user, logout } = useContext(AuthContext)
   const navigate = useNavigate()
 
-  const onLogout = () => {
+  const handleLogout = () => {
     logout()
-    navigate('/login', {
-      replace: true
-    })
+    navigate('/login', { replace: true })
   }
 
   return (
@@ -55,7 +53,7 @@ export function Navbar() {
         <ul className='navbar-nav ml-auto'>
           <span className='nav-item nav-link text-primary'>{user?.name}</span>
 
-          <button className='nav-item nav-link btn' onClick={onLogout}>
+          <button className='nav-item nav-link btn' onClick={handleLogout}>
             Logout
           </button>
         </ul>
