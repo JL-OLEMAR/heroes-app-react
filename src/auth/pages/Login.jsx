@@ -7,7 +7,8 @@ export function Login() {
   const { login } = useContext(AuthContext)
   const navigate = useNavigate()
 
-  const onLogin = () => {
+  const handleLogin = () => {
+    // Remember the last remembered page
     const lastPath = localStorage.getItem('lastPath') || '/'
 
     login('Testing user')
@@ -19,7 +20,7 @@ export function Login() {
       <h1>Login</h1>
       <hr />
 
-      <button className='btn btn-primary' onClick={onLogin}>
+      <button className='btn btn-primary' onClick={handleLogin}>
         Login
       </button>
     </div>
