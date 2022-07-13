@@ -31,7 +31,7 @@ export function Search() {
         <div className='col-5'>
           <h4>Searching</h4>
           <hr />
-          <form onSubmit={handleSearchSubmit}>
+          <form aria-label='form' onSubmit={handleSearchSubmit}>
             <input
               autoComplete='off'
               className='form-control'
@@ -58,6 +58,7 @@ export function Search() {
           </div>
 
           <div
+            aria-label='alert-danger'
             className='alert alert-danger animate__animated animate__fadeIn'
             style={{ display: showError ? '' : 'none' }}
           >
